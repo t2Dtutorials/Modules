@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="Template"
+	VersionId="1"
+	Description="A blank template for testing and prototyping."
+	ScriptFile="main.cs"
+	CreateFunction="create"
+	DestroyFunction="destroy">
+		<DeclaredAssets
+			Path="assets"
+			Extension="asset.taml"
+			Recurse="true"/>
+</ModuleDefinition>
