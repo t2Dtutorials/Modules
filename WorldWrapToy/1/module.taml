@@ -1,0 +1,16 @@
+<ModuleDefinition
+	ModuleId="WorldWrapToy"
+	VersionId="1"
+	Enabled="1"
+	Description="Demonstrates floaty keyboard movement and a world limit wrap."
+   Dependencies="ToyAssets=1"
+   Type="toy"
+   ToyCategoryIndex="3"
+	ScriptFile="main.cs"
+	CreateFunction="create"
+	DestroyFunction="destroy">
+		<DeclaredAssets
+			Path="assets"
+			Extension="asset.taml"
+			Recurse="true"/>
+</ModuleDefinition>
