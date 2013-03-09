@@ -39,8 +39,12 @@ function WorldWrapToy::createBackground(%this)
     // Set to the furthest background layer.
     %object.SceneLayer = 31;
     
-    // Set the scroller to use an animation!
+    // Set the image
     %object.Image = "ToyAssets:highlightBackground";
+    
+    // Change the image background color for better contrast with the player sprite
+    %object.setBlendMode(true);
+    %object.setBlendColor("SteelBlue");
             
     // Add the sprite to the scene.
     SandboxScene.add(%object);    
@@ -63,13 +67,16 @@ function WorldWrapToy::createPlayer( %this )
     // Set the sprite to use an image.  This is known as "static" image mode.
     %object.Image = "ToyAssets:hollowArrow";
     
+    // Set the group and a field to handle trigger collisions
     %object.SceneGroup = "14";
     %object.hitTrigger = 0;
     
     %object.createCircleCollisionShape(3);
     %object.setCollisionGroups(15);
-    %object.setCollisionCallback(true);
+    // Player collision callback not needed right now thanks to onCollision changes
+    // %object.setCollisionCallback(true);
     
+    // Add the move behavior to the player
     %moveBehavior = moveBehavior.createInstance();
     %moveBehavior.initialize(%this.upKey, %this.downKey, %this.leftKey, %this.rightKey, %this.acceleration, %this.turnSpeed, %this.damping);
     %object.addBehavior(%moveBehavior);
@@ -89,7 +96,7 @@ function WorldWrapToy::createTriggers(%this)
     %leftTrigger.setSceneLayer(1);
     %leftTrigger.setSceneGroup(15);
     %leftTrigger.setCollisionGroups(14);
-    %leftTrigger.createPolygonBoxCollisionShape(5, 85);
+    %leftTrigger.createPolygonBoxCollisionShape();
     %leftTrigger.setDefaultDensity(1);
     %leftTrigger.setDefaultFriction(1.0);        
     %leftTrigger.setAwake(true);
@@ -108,7 +115,7 @@ function WorldWrapToy::createTriggers(%this)
     %rightTrigger.setSceneLayer(1);
     %rightTrigger.setSceneGroup(15);
     %rightTrigger.setCollisionGroups(14);
-    %rightTrigger.createPolygonBoxCollisionShape(5, 85);
+    %rightTrigger.createPolygonBoxCollisionShape();
     %rightTrigger.setDefaultDensity(1);
     %rightTrigger.setDefaultFriction(1.0);    
     %rightTrigger.setAwake(true);
@@ -127,7 +134,7 @@ function WorldWrapToy::createTriggers(%this)
     %topTrigger.setSceneLayer(1);
     %topTrigger.setSceneGroup(15);
     %topTrigger.setCollisionGroups(14);
-    %topTrigger.createPolygonBoxCollisionShape(110, 5);
+    %topTrigger.createPolygonBoxCollisionShape();
     %topTrigger.setDefaultDensity(1);
     %topTrigger.setDefaultFriction(1.0);    
     %topTrigger.setAwake(true);
@@ -146,7 +153,7 @@ function WorldWrapToy::createTriggers(%this)
     %bottomTrigger.setSceneLayer(1);
     %bottomTrigger.setSceneGroup(15);
     %bottomTrigger.setCollisionGroups(14);
-    %bottomTrigger.createPolygonBoxCollisionShape(110, 5);
+    %bottomTrigger.createPolygonBoxCollisionShape();
     %bottomTrigger.setDefaultDensity(1);
     %bottomTrigger.setDefaultFriction(1.0);    
     %bottomTrigger.setAwake(true);
@@ -157,7 +164,7 @@ function WorldWrapToy::createTriggers(%this)
     SandboxScene.add(%bottomTrigger);
 }
 
-function LevelBoundary::handleCollision(%this, %object, %collisionDetails)
+function LevelBoundary::onCollision(%this, %object, %collisionDetails)
 {
    // Check if the object has the player class, then check if the wrap function should be called
     if (%object.class $= "PlayerClass")
@@ -182,20 +189,20 @@ function PlayerClass::wrap(%this, %side)
    switch$(%side)
    {
       case "left":
-      %newX = %this.getPositionX() * -1;
-      %newY = %this.getPositionY();
+      %newX = %this.Position.x * -1;
+      %newY = %this.Position.y;
       
       case "right":
-      %newX = %this.getPositionX() * -1;
-      %newY = %this.getPositionY();
+      %newX = %this.Position.x * -1;
+      %newY = %this.Position.y;
       
       case "top":
-      %newX = %this.getPositionX();
-      %newY = %this.getPositionY() * -1;
+      %newX = %this.Position.x;
+      %newY = %this.Position.y * -1;
       
       case "bottom":
-      %newX = %this.getPositionX();
-      %newY = %this.getPositionY() * -1;
+      %newX = %this.Position.x;
+      %newY = %this.Position.y * -1;
    }
 
    %newPosition = %newX SPC %newY;
