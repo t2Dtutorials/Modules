@@ -30,13 +30,13 @@ function AudioBasicsToy::create( %this )
     SandboxWindow.setUseObjectInputEvents(true);
     
     // Setup default
-    AudioBasicsToy.Option = "ToyAssets:titleMusic";
+    AudioBasicsToy.Music = "ToyAssets:titleMusic";
     
     // Sandbox options
-    addSelectionOption( "ToyAssets:titleMusic,ToyAssets:winMusic", "Background Music", 2, "setupMusic", true, "Choose a music file" );
+    addSelectionOption( "Title Music,Level Music,Win Music,Lose Music", "Background Music", 4, "setupMusic", true, "Choose a music file" );
     
     // Reset the toy initially.
-    AudioBasicsToy.reset();        
+    AudioBasicsToy.reset();
 }
 
 //-----------------------------------------------------------------------------
@@ -67,7 +67,20 @@ function AudioBasicsToy::reset( %this )
 
 function AudioBasicsToy::setupMusic(%this, %value)
 {
-   %this.Option = %value;
+   switch$(%value)
+   {
+      case "Title Music":
+      AudioBasicsToy.Music = "ToyAssets:titleMusic";
+      
+      case "Level Music":
+      AudioBasicsToy.Music = "ToyAssets:level1Music";
+      
+      case "Win Music":
+      AudioBasicsToy.Music = "ToyAssets:winMusic";
+      
+      case "Lose Music":
+      AudioBasicsToy.Music = "ToyAssets:loseMusic";
+   }
 }
 
 //-----------------------------------------------------------------------------
@@ -78,7 +91,7 @@ function AudioBasicsToy::createBackground(%this)
     %object = new Sprite();
     
     // Set the sprite as "static" so it is not affected by gravity.
-    %object.setBodyType(static);
+    %object.setBodyType("static");
        
     // Always try to configure a scene-object prior to adding it to a scene for best performance.
 
@@ -93,6 +106,10 @@ function AudioBasicsToy::createBackground(%this)
     
     // Set the scroller to use an animation!
     %object.Image = "ToyAssets:highlightBackground";
+    
+    // Set the blend color to improve contrast
+    %object.setBlendMode(true);
+    %object.setBlendColor("DarkSlateGray");
             
     // Add the sprite to the scene.
     SandboxScene.add(%object);    
@@ -103,7 +120,7 @@ function AudioBasicsToy::createButtons(%this)
    // Create the buttons and configure.
     %object1 = new Sprite() {class = "ButtonClass";};
     %object1.type = "play";
-    %object1.setBodyType(static);
+    %object1.setBodyType("static");
     %object1.Position = "-20 20";
     %object1.Size = "15";
     %object1.SceneLayer = 5;
@@ -112,7 +129,7 @@ function AudioBasicsToy::createButtons(%this)
     
     %object2 = new Sprite() {class = "ButtonClass";};
     %object2.type = "pause";
-    %object2.setBodyType(static);
+    %object2.setBodyType("static");
     %object2.Position = "0 20";       
     %object2.Size = "15";
     %object2.SceneLayer = 5;
@@ -121,7 +138,7 @@ function AudioBasicsToy::createButtons(%this)
     
     %object3 = new Sprite() {class = "ButtonClass";};
     %object3.type = "stop";
-    %object3.setBodyType(static);
+    %object3.setBodyType("static");
     %object3.Position = "20 20";       
     %object3.Size = "15";
     %object3.SceneLayer = 5;
@@ -130,9 +147,9 @@ function AudioBasicsToy::createButtons(%this)
     
     %object4 = new Sprite() {class = "ButtonClass";};
     %object4.type = "sfxPlay";
-    %object4.setBodyType(static);
+    %object4.setBodyType("static");
     %object4.Position = "20 -2";       
-    %object4.Size = "5";
+    %object4.Size = "7";
     %object4.SceneLayer = 5;
     %object4.Image = "AudioBasicsToy:PlayButton";
     %object4.setUseInputEvents(true);
@@ -209,46 +226,71 @@ function AudioBasicsToy::createAnimatedSprite(%this)
     
     // Setup collision properties.
     %object.createPolygonBoxCollisionShape(7, 8);
-    %object.setCollisionCallback(true);
        
     // Add the sprite to the scene.
     SandboxScene.add(%object);
     
     // Give the sprite a velocity.
-    %object.setLinearVelocityX(-12);
+    %object.setLinearVelocityX(-15);
 }
 
 function ButtonClass::onTouchDown(%this, %touchID, %worldPos)
 {
+   // Find out what button is pressed and perform an action.
    switch$(%this.type)
    {
       case "play":
-      if (!alxIsPlaying(AudioBasicsToy.Music))
+      %this.Image = "AudioBasicsToy:PlayButton_Press";
+      if (!alxIsPlaying(AudioBasicsToy.Handle))
       {
-         AudioBasicsToy.Music = alxPlay(AudioBasicsToy.Option);
-         echo("Assigned ID is" SPC AudioBasicsToy.Music);
+         // Play the selected music
+         AudioBasicsToy.Handle = alxPlay(AudioBasicsToy.Music);
       }
       
       case "pause":
-      if (alxIsPlaying(AudioBasicsToy.Music))
+      %this.Image = "AudioBasicsToy:PauseButton_Press";
+      if (alxIsPlaying(AudioBasicsToy.Handle))
       {
-         echo("pause" SPC AudioBasicsToy.Music);
-         alxPause(AudioBasicsToy.Music);
+         // Pause the selected music
+         alxPause(AudioBasicsToy.Handle);
       }else
       {
-         echo("unpause" SPC AudioBasicsToy.Music);
-         alxUnpause(AudioBasicsToy.Music);
+         // Unpause the music
+         alxUnpause(AudioBasicsToy.Handle);
       }
       
       case "stop":
-      alxStop(AudioBasicsToy.Music);
+      %this.Image = "AudioBasicsToy:StopButton_Press";
+      // Stop the music
+      alxStop(AudioBasicsToy.Handle);
       
       case "sfxPlay":
+      %this.Image = "AudioBasicsToy:PlayButton_Press";
+      // Create a sprite
       AudioBasicsToy.createAnimatedSprite();
    }
 }
 
-function TrapClass::handleCollision(%this, %object, %collisionDetails)
+function ButtonClass::onTouchUp(%this, %touchID, %worldPos)
+{
+   // Press down swaps the default image, press up returns it to normal
+   switch$(%this.type)
+   {
+      case "play":
+      %this.Image = "AudioBasicsToy:PlayButton";
+      
+      case "pause":
+      %this.Image = "AudioBasicsToy:PauseButton";
+      
+      case "stop":
+      %this.Image = "AudioBasicsToy:StopButton";
+      
+      case "sfxPlay":
+      %this.Image = "AudioBasicsToy:PlayButton";
+   }
+}
+
+function TrapClass::onCollision(%this, %object, %collisionDetails)
 {
    // Create explosion
    %anim = new Sprite() {class = "KnightClass";};
@@ -272,6 +314,7 @@ function TrapClass::handleCollision(%this, %object, %collisionDetails)
 
 function KnightClass::checkAnimation(%this)
 {
+   // Check if animation is finished and delete the object if true.
    if (%this.getIsAnimationFinished())
    {
       %this.setEnabled(false);
