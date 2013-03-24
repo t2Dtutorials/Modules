@@ -1,0 +1,10 @@
+<ModuleDefinition
+	ModuleId="FadeInOutToy"
+	VersionId="1"
+	Description="Demonstrates using blending for a fade in/out effect or for pulsing colors"
+	Dependencies="ToyAssets=1"
+	Type="toy"
+	ToyCategoryIndex="6"
+	ScriptFile="main.cs"
+	CreateFunction="create"
+	DestroyFunction="destroy"/>
