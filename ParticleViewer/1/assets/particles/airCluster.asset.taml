@@ -1,0 +1,111 @@
+<ParticleAsset
+    AssetName="AirCluster">
+    <ParticleAssetEmitter
+        EmitterName="BlueBombs"
+		EmitterType="POINT"
+        FixedForceAngle="90"
+        IntenseParticles="true"
+        Image="@asset=ParticleViewer:Particles1"
+        Frame="1">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 2" />
+            <Quantity
+                Keys="0 20" />
+            <QuantityVariation
+                Keys="0 10" />
+            <SizeX
+                Keys="0 4" />
+            <SizeXVariation
+                Keys="0 4" />
+            <SizeXLife>
+				<Key Time="0" Value="0"/>
+				<Key Time="0.9" Value="0"/>
+				<Key Time="1" Value="5"/>
+			</SizeXLife>
+            <Speed
+                Keys="0 10" />
+            <SpeedVariation
+                Keys="0 2" />
+            <SpeedLife>
+                <Key Time="0" Value="1"/>
+                <Key Time="0.2" Value="0.5"/>
+                <Key Time="0.5" Value="0.3"/>
+                <Key Time="1" Value="0.1"/>
+            </SpeedLife>
+            <FixedForce
+                Keys="0 1" />
+            <RandomMotion
+                Keys="0 5" />
+            <RandomMotionVariation
+                Keys="0 5" />
+            <RandomMotionLife
+                Keys="0 1 1 15" />
+            <EmissionForce
+                Keys="0 2.5" />
+            <EmissionForceVariation
+                Keys="0 0" />
+            <EmissionAngle
+                Keys="0 90" />
+            <EmissionArc
+                Keys="0 30" />
+            <AlphaChannel
+                Keys="0 0.1 0.8 1 1 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+    <ParticleAssetEmitter
+        EmitterName="sparkles"
+        EmitterType="POINT"
+        FixedForceAngle="90"
+        IntenseParticles="true"
+        Image="@asset=ParticleViewer:Particles1"
+        Frame="2">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 2" />
+            <Quantity
+                Keys="0 75" />
+            <QuantityVariation
+                Keys="0 25" />
+            <SizeX
+                Keys="0 2" />
+            <SizeXVariation
+                Keys="0 4" />
+            <SizeXLife>
+                <Key Time="0" Value="0.5"/>
+                <Key Time="0.9" Value="0.5"/>
+                <Key Time="1" Value="8"/>
+            </SizeXLife>
+            <Speed
+                Keys="0 8" />
+            <SpeedVariation
+                Keys="0 5" />
+            <SpeedLife>
+                <Key Time="0" Value="1"/>
+                <Key Time="0.2" Value="0.5"/>
+                <Key Time="0.5" Value="0.3"/>
+                <Key Time="1" Value="0.1"/>
+            </SpeedLife>
+            <FixedForce
+                Keys="0 1" />
+            <FixedForceLife
+                Keys="0 0 1 1" />
+            <RandomMotion
+                Keys="0 5" />
+            <RandomMotionVariation
+                Keys="0 5" />
+            <RandomMotionLife
+                Keys="0 1 1 15" />
+            <EmissionForce
+                Keys="0 2.5" />
+            <EmissionForceVariation
+                Keys="0 2" />
+            <EmissionAngle
+                Keys="0 90" />
+            <EmissionArc
+                Keys="0 30" />
+            <AlphaChannel
+                Keys="0 0.1 0.8 1 1 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+</ParticleAsset>

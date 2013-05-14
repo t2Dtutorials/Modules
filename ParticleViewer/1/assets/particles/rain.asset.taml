@@ -1,0 +1,54 @@
+<ParticleAsset
+    AssetName="Rain">
+    <ParticleAssetEmitter
+        EmitterName="Rain"
+        EmitterType="LINE"
+        EmitterSize="30 0"
+        FixedAspect="false"
+        FixedForceAngle="-90"
+        FixedAngleOffset="90"
+        Image="@asset=ParticleViewer:Particles2"
+        Frame="2">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 0.75" />
+            <Quantity
+                Keys="0 150" />
+            <SizeX
+				Keys="0 1" />
+            <SizeY
+                Keys="0 1" />
+            <SizeYVariation
+                Keys="0 2" />
+            <SizeYLife
+                Keys="0 0.25 1 2" />
+            <Speed
+                Keys="0 10" />
+            <FixedForce
+                Keys="0 5" />
+            <FixedForceVariation
+                Keys="0 5" />
+            <RandomMotion
+                Keys="0 20" />
+            <EmissionForce
+                Keys="0 8" />
+            <EmissionForceVariation
+                Keys="0 4" />
+            <EmissionAngle
+                Keys="0 -90" />
+            <EmissionArc
+                Keys="0 0" />
+            <RedChannel
+                Keys="0 0.7" />
+            <GreenChannel
+                Keys="0 0.7" />
+            <BlueChannel
+                Keys="0 1" />
+            <AlphaChannel>
+				<Key Time="0" Value="0"/>
+                <Key Time="0.1" Value="1"/>
+                <Key Time="1" Value="0"/>
+			</AlphaChannel>
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+</ParticleAsset>

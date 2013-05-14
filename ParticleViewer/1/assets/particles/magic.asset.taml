@@ -1,0 +1,60 @@
+<ParticleAsset
+    AssetName="Magic"
+    LifeMode="CYCLE"
+    Lifetime="3">
+    <ParticleAssetEmitter
+        EmitterName="Sparkles"
+        EmitterType="LINE"
+        EmitterSize="0 10"
+        OrientationType="RANDOM"
+        IntenseParticles="true"
+        Image="@asset=ParticleViewer:Particles1"
+        Frame="3">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 0.5" />
+            <Quantity
+                Keys="0 100 1 100 1.01 0" />
+            <SizeX
+				Keys="0 8" />
+            <SizeXVariation
+                Keys="0 8" />
+            <SizeXLife>
+                <Key Time="0" Value="1"/>
+                <Key Time="0.45" Value="1"/>
+                <Key Time="1" Value="0"/>
+            </SizeXLife>
+            <Speed
+                Keys="0 8" />
+            <SpeedLife>
+                <Key Time="0" Value="2"/>
+                <Key Time="0.75" Value="0.2"/>
+                <Key Time="1" Value="0"/>
+            </SpeedLife>
+            <SpinVariation
+                Keys="0 720" />
+            <RandomMotion
+                Keys="0 200" />
+            <EmissionForce
+                Keys="0 0.5" />
+            <EmissionForceVariation
+                Keys="0 10" />
+            <EmissionAngle
+                Keys="0 90" />
+            <EmissionArc
+                Keys="0 15" />
+            <RedChannel
+                Keys="0 0.262 0.7 0.258" />
+            <GreenChannel
+                Keys="0 0.411 0.7 0.407" />
+            <BlueChannel
+                Keys="0 0.427 0.7 0.525" />
+            <AlphaChannel>
+				<Key Time="0" Value="0"/>
+                <Key Time="0.2" Value="1"/>
+                <Key Time="0.5" Value="1"/>
+                <Key Time="1" Value="0"/>
+			</AlphaChannel>
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+</ParticleAsset>

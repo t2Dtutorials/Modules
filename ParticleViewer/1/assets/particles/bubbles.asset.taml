@@ -1,0 +1,98 @@
+<ParticleAsset
+    AssetName="Bubbles">
+    <ParticleAssetEmitter
+        EmitterName="BubblesOne"
+		EmitterType="LINE"
+        EmitterSize="10 0"
+        Image="@asset=ParticleViewer:Particles5"
+        Frame="1">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 2" />
+            <LifetimeVariation
+                Keys="0 1" />
+            <Quantity
+                Keys="0 20" />
+            <SizeX
+                Keys="0 2" />
+            <SizeXVariation
+                Keys="0 4" />
+            <SizeXLife
+                Keys="0 0.1 0.2 0.4 0.8 1 0.95 1 1 0" />
+            <Speed
+                Keys="0 5" />
+            <SpeedVariation
+                Keys="0 5" />
+            <SpeedLife
+                Keys="0 2 0.2 1 1 0.1" />
+            <RandomMotionVariation
+                Keys="0 250" />
+            <EmissionForce
+                Keys="0 4" />
+            <EmissionForceVariation
+                Keys="0 2" />
+            <EmissionAngle
+                Keys="0 90" />
+            <EmissionArc
+                Keys="0 10" />
+            <RedChannel
+                Keys="0 1 0.5 0" />
+            <GreenChannel
+                Keys="0 1 0.5 0.717" />
+            <BlueChannel
+                Keys="0 1 0.5 0.941" />
+            <AlphaChannel
+                Keys="0 1 0.95 1 1 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+    <ParticleAssetEmitter
+        EmitterName="BubblesTwo"
+        EmitterType="LINE"
+        EmitterSize="10 0"
+        Image="@asset=ParticleViewer:Particles5"
+        Frame="0">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 4" />
+            <LifetimeVariation
+                Keys="0 1" />
+            <Quantity
+                Keys="0 5" />
+            <SizeX
+                Keys="0 2" />
+            <SizeXVariation
+                Keys="0 1" />
+            <SizeXLife>
+                <Key Time="0" Value="0.1"/>
+                <Key Time="0.2" Value="0.4"/>
+                <Key Time="0.8" Value="1"/>
+                <Key Time="0.95" Value="1"/>
+                <Key Time="1" Value="0"/>
+            </SizeXLife>
+            <Speed
+                Keys="0 3" />
+            <SpeedVariation
+                Keys="0 5" />
+            <SpeedLife
+                Keys="0 2 0.2 1 1 0.1" />
+            <RandomMotionVariation
+                Keys="0 250" />
+            <EmissionForce
+                Keys="0 4" />
+            <EmissionForceVariation
+                Keys="0 2" />
+            <EmissionAngle
+                Keys="0 90" />
+            <EmissionArc
+                Keys="0 10" />
+            <RedChannel
+                Keys="0 1 0.5 0" />
+            <GreenChannel
+                Keys="0 1 0.5 0.717" />
+            <BlueChannel
+                Keys="0 1 0.5 0.941" />
+            <AlphaChannel
+                Keys="0 1 0.95 1 1 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+</ParticleAsset>

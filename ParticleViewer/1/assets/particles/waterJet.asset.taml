@@ -1,0 +1,59 @@
+<ParticleAsset
+    AssetName="WaterJet">
+    <ParticleAssetEmitter
+        EmitterName="Stream"
+        EmitterType="POINT"
+        IntenseParticles="true"
+        OldestInFront="true"
+        Image="@asset=ParticleViewer:Particles2"
+        Frame="2">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 2" />
+            <LifetimeVariation
+                Keys="0 1" />
+            <Quantity
+                Keys="0 100" />
+            <QuantityVariation
+                Keys="0 15" />
+            <SizeX
+				Keys="0 10" />
+            <SizeXVariation
+                Keys="0 5" />
+            <SizeXLife>
+                <Key Time="0" Value="0.6"/>
+                <Key Time="0.8" Value="2"/>
+            </SizeXLife>
+            <Speed
+                Keys="0 2.5" />
+            <SpeedLife>
+                <Key Time="0" Value="2"/>
+                <Key Time="0.2" Value="1.1"/>
+                <Key Time="0.5" Value="0.4"/>
+                <Key Time="1" Value="0.1"/>
+            </SpeedLife>
+            <SpinVariation
+                Keys="0 96" />
+            <SpinLife
+                Keys="0 1 0.5 0.8 1 0" />
+            <RandomMotionVariation
+                Keys="0 19.5" />
+            <EmissionForce
+                Keys="0 10" />
+            <EmissionForceVariation
+                Keys="0 2" />
+            <EmissionArc
+                Keys="0 2" />
+            <RedChannel
+                Keys="0 0.1" />
+            <GreenChannel
+                Keys="0 0.1" />
+            <BlueChannel
+                Keys="0 0.75" />
+            <AlphaChannel>
+				<Key Time="0" Value="0.5"/>
+                <Key Time="1" Value="0"/>
+			</AlphaChannel>
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+</ParticleAsset>

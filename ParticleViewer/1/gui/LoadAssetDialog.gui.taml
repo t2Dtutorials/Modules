@@ -1,0 +1,145 @@
+<GuiControl
+    Name="LoadAssetDialog"
+    Profile="GuiDefaultProfile"
+    HorizSizing="relative"
+    VertSizing="relative"
+    Position="0 0"
+    Extent="1024 768"
+    MinExtent="320 320">
+	
+	<!-- Close Asset List -->
+	<GuiButtonCtrl
+		Name="AssetCancelButton"
+		Profile="BlueButtonProfile"
+		Text="Exit Assets"
+		ButtonType="PushButton"
+		command="toggleAssetList(true);"
+		canSaveDynamicFields="0"
+		isContainer="0"
+		HorizSizing="relative"
+		VertSizing="relative"
+		Position="924 738"
+		Extent="100 30"
+		MinExtent="8 2"
+		canSave="1"
+		Visible="1"
+		Active="1"
+		hovertime="1000"
+		groupNum="-1"
+		useMouseEvents="1" />
+
+	<!-- Particle Selection Panel -->
+	<GuiControl
+		Profile="GuiDefaultProfile"
+		HorizSizing="relative"
+		VertSizing="relative"
+		Position="800 0"
+		Extent="300 700">
+			
+		<!-- Particle Selection -->        
+		<GuiImageButtonCtrl
+			Name="PreviousToyButton"
+			canSaveDynamicFields="0"
+			command="ToyListScroller.scrollToPrevious();"
+			isContainer="0"
+			Profile="GuiDefaultProfile"
+			HorizSizing="relative"
+			VertSizing="relative"
+			Position="70 35"
+			Extent="69 23"
+			MinExtent="8 2"
+			canSave="1"
+			Visible="1"
+			Active="1"
+			groupNum="-1"
+			buttonType="PushButton"
+			useMouseEvents="0"
+			NormalImage="@asset=ParticleViewer:northArrowNormal"
+			HoverImage="@asset=ParticleViewer:northArrowHover"
+			DownImage="@asset=ParticleViewer:northArrowDown" />
+			
+		<GuiImageButtonCtrl
+			Name="NextToyButton"
+			command="ToyListScroller.scrollToNext();"
+			canSaveDynamicFields="0"
+			isContainer="0"
+			Profile="GuiDefaultProfile"
+			HorizSizing="relative"
+			VertSizing="relative"
+			Position="70 670"
+			Extent="69 23"
+			MinExtent="8 2"
+			canSave="1"
+			Visible="1"
+			Active="1"
+			hovertime="1000"
+			groupNum="-1"
+			buttonType="PushButton"
+			useMouseEvents="0"
+			NormalImage="@asset=ParticleViewer:southArrowNormal"
+			HoverImage="@asset=ParticleViewer:southArrowHover"
+			DownImage="@asset=ParticleViewer:southArrowDown" />
+		
+		<!-- Particle Selection Scrollbox --> 
+        <GuiControl
+            Name="ToyScrollerContainer"
+            canSaveDynamicFields="0"
+            isContainer="1"
+            Profile="GuiSunkenContainerProfile"
+            HorizSizing="relative"
+            VertSizing="relative"
+            Position="0 65"
+            Extent="215 600"
+            MinExtent="8 2"
+            canSave="1"
+            Visible="1"
+            Active="1"
+            hovertime="1000">
+			
+			<GuiScrollCtrl
+				Name="ToyListScroller"
+				canSaveDynamicFields="1"
+				isContainer="1"
+				Profile="GuiLightScrollProfile"
+				HorizSizing="relative"
+				VertSizing="relative"
+				Position="0 5"
+				Extent="215 575"
+				MinExtent="215 575"
+				canSave="1"
+				Visible="1"
+				Active="1"
+				hovertime="1000"
+				willFirstRespond="1"
+				hScrollBar="alwaysOff"
+				vScrollBar="dynamic"
+				constantThumbHeight="0"
+				childMargin="2 3" >
+
+				<GuiDynamicCtrlArrayControl
+					Name="AssetListArray"
+					canSaveDynamicFields="0"
+					internalName="objectList"
+					isContainer="1"
+					Profile="GuiTransparentProfile"
+					HorizSizing="relative"
+					VertSizing="relative"
+					Position="25 1"
+					Extent="190 300"
+					MinExtent="1 2"
+					canSave="1"
+					Visible="1"
+					Active="1"
+					tooltipprofile="GuiToolTipProfile"
+					hovertime="1000"
+					colCount="1"
+					colSize="180"
+					rowSize="50"
+					rowSpacing="8"
+					colSpacing="8" />
+			</GuiScrollCtrl>      
+		</GuiControl> 
+	</GuiControl>
+
+	</GuiControl>			
+</GuiControl>

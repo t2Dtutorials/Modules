@@ -1,0 +1,65 @@
+<ParticleAsset
+    AssetName="Flasher">
+    <ParticleAssetEmitter
+        EmitterName="Glow"
+		EmitterType="BOX"
+        EmitterSize="10 10"
+        OrientationType="RANDOM"
+        IntenseParticles="true"
+        Image="@asset=ParticleViewer:Particles1"
+        Frame="2">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 0.2" />
+            <Quantity
+                Keys="0 50" />
+            <SizeX
+                Keys="0 6" />
+            <SizeXVariation
+                Keys="0 4" />
+            <SizeXLife
+                Keys="0 2 1 1" />
+            <Speed
+                Keys="0 1" />
+            <FixedForce
+                Keys="0 1" />
+            <FixedForceLife
+                Keys="0 50 0.5 0 1 50" />
+            <AlphaChannel
+                Keys="0 0.2 0.5 0.5 1 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+    <ParticleAssetEmitter
+        EmitterName="Flasher"
+        EmitterType="BOX"
+        EmitterSize="10 10"
+        OrientationType="RANDOM"
+        IntenseParticles="true"
+        Image="@asset=ParticleViewer:Particles3"
+        Frame="3">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 0.2" />
+            <LifetimeVariation
+                Keys="0 0.1" />
+            <Quantity
+                Keys="0 150" />
+            <SizeX
+                Keys="0 6" />
+            <SizeXVariation
+                Keys="0 2" />
+            <SizeXLife>
+                <Key Time="0" Value="2"/>
+                <Key Time="1" Value="1"/>
+            </SizeXLife>
+            <Speed
+                Keys="0 1" />
+            <FixedForce
+                Keys="0 1" />
+            <FixedForceLife
+                Keys="0 50 0.5 0 1 50" />
+            <AlphaChannel
+                Keys="0 0.2 0.5 0.5 1 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+</ParticleAsset>

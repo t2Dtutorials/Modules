@@ -1,0 +1,92 @@
+<ParticleAsset
+    AssetName="Levitate">
+    <ParticleAssetEmitter
+        EmitterName="Rings"
+		EmitterType="POINT"
+        FixedAspect="false"
+        IntenseParticles="true"
+        AttachPositionToEmitter="true"
+        AttachRotationToEmitter="true"
+        Image="@asset=ParticleViewer:Particles5">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 1" />
+            <Quantity
+                Keys="0 8" />
+            <SizeX
+                Keys="0 10" />
+            <SizeXLife
+                Keys="0 0.2 1 2" />
+            <SizeY
+                Keys="0 3" />
+            <SizeYLife
+                Keys="0 0.2 1 2" />
+            <Speed
+                Keys="0 10" />
+            <EmissionForce
+                Keys="0 2" />
+            <EmissionForceVariation
+                Keys="0 0" />
+            <EmissionAngle
+                Keys="0 -90" />
+            <EmissionArc
+                Keys="0 1" />
+            <RedChannel
+                Keys="0 0.4 1 0" />
+            <GreenChannel
+                Keys="0 0 0.5 0.4" />
+            <BlueChannel
+                Keys="0 1" />
+            <AlphaChannel
+                Keys="0 0.3 0.7 1 1 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+    <ParticleAssetEmitter
+        EmitterName="FlickerTrail"
+        EmitterType="LINE"
+        FixedForceAngle="90"
+        IntenseParticles="true"
+        AttachPositionToEmitter="true"
+        AttachRotationToEmitter="true"
+        Image="@asset=ParticleViewer:Particles1"
+        Frame="1">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 1" />
+            <Quantity
+                Keys="0 100" />
+            <SizeX
+                Keys="0 4" />
+            <SizeXVariation
+                Keys="0 3" />
+            <SizeXLife>
+                <Key Time="0" Value="0.2"/>
+                <Key Time="0.5" Value="1.4"/>
+                <Key Time="0.9" Value="2"/>
+                <Key Time="1" Value="3"/>
+            </SizeXLife>
+            <Speed
+                Keys="0 3" />
+            <SpeedVariation
+                Keys="0 5" />
+            <RandomMotion
+                Keys="0 20" />
+            <EmissionForce
+                Keys="0 6" />
+            <EmissionForceVariation
+                Keys="0 4" />
+            <EmissionAngle
+                Keys="0 -90" />
+            <EmissionArc
+                Keys="0 30" />
+            <RedChannel
+                Keys="0 0 0.5 0.2" />
+            <GreenChannel
+                Keys="0 0" />
+            <BlueChannel
+                Keys="0 0.4 0.4 0.3 1 0" />
+            <AlphaChannel
+                Keys="0 0 0.3 1 0.7 1 1 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+</ParticleAsset>

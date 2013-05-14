@@ -1,0 +1,39 @@
+<ParticleAsset
+    AssetName="RainbowBlob">
+    <ParticleAssetEmitter
+        EmitterName="Blob"
+        EmitterType="POINT"
+        OrientationType="ALIGNED"
+        Image="@asset=ParticleViewer:Particles1"
+        Frame="2">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 3" />
+            <Quantity
+                Keys="0 60" />
+            <SizeX
+				Keys="0 7" />
+            <Speed
+                Keys="0 0.5" />
+            <Spin
+                Keys="0 15" />
+            <EmissionForce
+                Keys="0 5" />
+            <EmissionForceVariation
+                Keys="0 0" />
+            <EmissionAngle
+                Keys="0 5 1 360" />
+            <RedChannel
+                Keys="0 1 0.74 0" />
+            <GreenChannel
+                Keys="0 0 0.52 1 0.85 0" />
+            <BlueChannel
+                Keys="0 1 0.5 0 1 1" />
+            <AlphaChannel>
+				<Key Time="0" Value="1"/>
+                <Key Time="0.8" Value="0.6"/>
+                <Key Time="1" Value="0"/>
+			</AlphaChannel>
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+</ParticleAsset>

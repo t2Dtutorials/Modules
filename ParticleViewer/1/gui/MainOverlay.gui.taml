@@ -1,0 +1,131 @@
+<GuiControl
+    Name="MainOverlay"
+    Profile="GuiDefaultProfile"
+    HorizSizing="relative"
+    VertSizing="relative"
+    Position="0 0"
+    Extent="1024 30"
+    MinExtent="220 30"
+    Visible="1">	
+	
+	<!-- Play/Stop Particle Mode-->
+    <GuiButtonCtrl
+        Name="PlayStopModeButton"
+        Profile="BlueButtonProfile"
+		Text="Play/Stop"
+		ButtonType="PushButton"
+        canSaveDynamicFields="0"
+        isContainer="0"
+        HorizSizing="left"
+        VertSizing="bottom"
+        Position="360 0"
+        Extent="100 30"
+        MinExtent="8 2"
+        canSave="1"
+        Visible="1"
+        Active="1"
+        hovertime="1000"
+        groupNum="-1"
+        useMouseEvents="1" />		
+
+	<!-- Pause Particle Mode-->
+    <GuiButtonCtrl
+        Name="PauseModeButton"
+        Profile="BlueButtonProfile"
+		Text="Pause"
+		ButtonType="PushButton"
+        canSaveDynamicFields="0"
+        isContainer="0"
+        HorizSizing="left"
+        VertSizing="bottom"
+        Position="474 0"
+        Extent="100 30"
+        MinExtent="8 2"
+        canSave="1"
+        Visible="1"
+        Active="1"
+        hovertime="1000"
+        groupNum="-1"
+        useMouseEvents="1" />		
+		
+	<!-- Reload Asset-->
+    <GuiButtonCtrl
+		Name="ReloadAssetButton"
+        Profile="BlueButtonProfile"
+		Text="Reload Asset"
+		ButtonType="PushButton"		
+        canSaveDynamicFields="0"
+        isContainer="0"
+        HorizSizing="left"
+        VertSizing="bottom"
+        Position="588 0"
+        Extent="100 30"
+        MinExtent="8 2"
+        canSave="1"
+        Visible="1"
+        Active="1"
+        hovertime="1000"
+        groupNum="-1"
+        useMouseEvents="1" />
+
+	<!-- Show Asset List -->
+    <GuiButtonCtrl
+        Profile="BlueButtonProfile"
+		Text="Show Assets"
+		ButtonType="PushButton"
+		command="toggleAssetList(true);"	
+        canSaveDynamicFields="0"
+        isContainer="0"
+        HorizSizing="left"
+        VertSizing="bottom"
+        Position="702 0"
+        Extent="100 30"
+        MinExtent="8 2"
+        canSave="1"
+        Visible="1"
+        Active="1"
+        hovertime="1000"
+        groupNum="-1"
+        useMouseEvents="1" />
+
+	<!-- Show Log -->
+    <GuiButtonCtrl
+        Profile="BlueButtonProfile"
+		Text="Show Log"
+		ButtonType="PushButton"	
+		command="ToggleConsole(true);"		
+        canSaveDynamicFields="0"
+        isContainer="0"
+        HorizSizing="left"
+        VertSizing="bottom"
+        Position="814 0"
+        Extent="100 30"
+        MinExtent="8 2"
+        canSave="1"
+        Visible="1"
+        Active="1"
+        hovertime="1000"
+        groupNum="-1"
+        useMouseEvents="1" />		
+			
+	<!-- Show Options -->
+    <GuiButtonCtrl
+        Profile="BlueButtonProfile"
+		Text="Show Options"
+		ButtonType="PushButton"
+        command="toggleToolbox(true);"
+        canSaveDynamicFields="0"
+        isContainer="0"
+        HorizSizing="left"
+        VertSizing="bottom"
+        Position="924 0"
+        Extent="100 30"
+        MinExtent="8 2"
+        canSave="1"
+        Visible="1"
+        Active="1"
+        hovertime="1000"
+        groupNum="-1"
+        useMouseEvents="1" />
+		
+</GuiControl>

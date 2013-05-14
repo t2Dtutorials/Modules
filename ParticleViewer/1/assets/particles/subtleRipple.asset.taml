@@ -1,0 +1,80 @@
+<ParticleAsset
+    AssetName="SubtleRipple">
+    <ParticleAssetEmitter
+        EmitterName="BaseRipple"
+		EmitterType="POINT"
+        OrientationType="RANDOM"
+        LinkEmissionRotation="true"
+        IntenseParticles="true"
+        OldestInFront="true"
+        Image="@asset=ParticleViewer:Particles7">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 2" />
+            <Quantity
+                Keys="0 25" />
+            <SizeX
+                Keys="0 6" />
+            <SizeXVariation
+                Keys="0 1.25" />
+            <SizeXLife
+                Keys="0 0.7 1 2.67" />
+            <Speed
+                Keys="0 1" />
+            <Spin
+                Keys="0 17" />
+            <EmissionForce
+                Keys="0 5" />
+            <RedChannel
+                Keys="0 0.32 1 0.2" />
+            <GreenChannel
+                Keys="0 0.35 1 0.45" />
+            <BlueChannel
+                Keys="0 0.58 1 0.83" />
+            <AlphaChannel
+                Keys="0 0.03 1 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+    <ParticleAssetEmitter
+        EmitterName="UnderRipple"
+        EmitterType="POINT"
+        OrientationType="RANDOM"
+        LinkEmissionRotation="true"
+        IntenseParticles="true"
+        OldestInFront="true"
+        Image="@asset=ParticleViewer:Particles8"
+        Frame="3">
+        <ParticleAssetEmitter.Fields>
+            <Lifetime
+                Keys="0 2" />
+            <Quantity
+                Keys="0 4" />
+            <SizeX
+                Keys="0 2" />
+            <SizeXVariation
+                Keys="0 0.8" />
+            <SizeXLife>
+                <Key Time="0" Value="0"/>
+                <Key Time="0.4" Value="1.5"/>
+                <Key Time="0.7" Value="6.5"/>
+                <Key Time="1" Value="15"/>
+            </SizeXLife>
+            <Speed
+                Keys="0 6.5" />
+            <SpeedVariation
+                Keys="0 4.7" />
+            <SpeedLife
+                Keys="0 -0.14" />
+            <EmissionForce
+                Keys="0 5" />
+            <RedChannel
+                Keys="0 0.375 0.45 0" />
+            <GreenChannel
+                Keys="0 0.416" />
+            <BlueChannel
+                Keys="0 1 0.87 1" />
+            <AlphaChannel
+                Keys="0 0 0.37 0.38 0.9 0" />
+        </ParticleAssetEmitter.Fields>
+    </ParticleAssetEmitter>
+</ParticleAsset>
